@@ -16,9 +16,9 @@
 package com.cognifide.aet.proxy;
 
 import com.cognifide.aet.job.api.collector.ProxyServerWrapper;
+import com.cognifide.aet.proxy.bmpc.BMPCProxy;
 import com.cognifide.aet.proxy.exceptions.UnableToAddHeaderException;
 import com.cognifide.aet.proxy.headers.HeaderRequestFactory;
-import com.github.detro.browsermobproxyclient.BMPCProxy;
 import com.github.detro.browsermobproxyclient.exceptions.BMPCUnableToConnectException;
 import com.google.gson.GsonBuilder;
 import org.apache.http.client.methods.CloseableHttpResponse;

@@ -15,11 +15,12 @@
  */
 package com.cognifide.aet.proxy.headers;
 
-import com.github.detro.browsermobproxyclient.BMPCProxy;
 import org.apache.http.client.methods.HttpPost;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
+
+import com.cognifide.aet.proxy.bmpc.BMPCProxy;
 
 public class HeaderRequestFactory {
 

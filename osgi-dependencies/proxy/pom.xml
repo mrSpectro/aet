@@ -106,6 +106,24 @@
           </execution>
         </executions>
       </plugin>
+	        <plugin>
+        <groupId>org.apache.rat</groupId>
+        <artifactId>apache-rat-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <excludes>
+                <!-- TODO: BMPC license -->
+                <exclude>src/main/java/com/cognifide/aet/proxy/bmpc/*.java</exclude>
+              </excludes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 

@@ -16,10 +16,10 @@
 package com.cognifide.aet.proxy;
 
 import com.cognifide.aet.job.api.exceptions.ProxyException;
+import com.cognifide.aet.proxy.bmpc.BMPCDefaultManager;
+import com.cognifide.aet.proxy.bmpc.BMPCProxy;
 import com.cognifide.aet.proxy.configuration.RestProxyManagerConf;
-import com.github.detro.browsermobproxyclient.BMPCProxy;
 import com.github.detro.browsermobproxyclient.exceptions.BMPCUnableToConnectException;
-import com.github.detro.browsermobproxyclient.manager.BMPCDefaultManager;
 import com.google.common.collect.Sets;
 import java.util.Set;
 import org.osgi.service.component.annotations.Activate;
@@ -79,7 +79,7 @@ public class RestProxyManager implements ProxyManager {
     int attempt = 0;
     while (bmpcProxy == null) {
       try {
-        bmpcProxy = manager.createProxy();
+        bmpcProxy = manager.createProxy(null, config.isAcceptAllHosts());
       } catch (BMPCUnableToConnectException e) {
         if (++attempt >= config.maxAttempts()) {
           throw new ProxyException(

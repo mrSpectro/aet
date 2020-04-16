@@ -31,11 +31,18 @@ public @interface RestProxyManagerConf {
 
   String DEFAULT_SERVER = "localhost";
 
+  String ACCEPT_ALL_HOSTS_NAME = "acceptAllHosts";
+
+  boolean DEFAULT_ACCEPT_ALL_HOSTS = false;
+
   @AttributeDefinition(name = SERVER_PROPERTY_NAME, description = "BrowserMob server address", type = AttributeType.STRING)
   String server() default DEFAULT_SERVER;
 
   @AttributeDefinition(name = PORT_PROPERTY_NAME, description = "BrowserMob API port", type = AttributeType.INTEGER)
   int port() default 8080;
+
+  @AttributeDefinition(name = ACCEPT_ALL_HOSTS_NAME, description = "BrowserMob flag for accepting host regardless of SSL certificate validity", type = AttributeType.BOOLEAN)
+  boolean isAcceptAllHosts() default DEFAULT_ACCEPT_ALL_HOSTS;
 
   @AttributeDefinition(name = MAX_ATTEMPTS_PROPERTY_NAME, description = "Maximum number of attempts that will be performed to create single proxy", type = AttributeType.INTEGER)
   int maxAttempts() default 3;
